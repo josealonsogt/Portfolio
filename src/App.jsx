@@ -17,7 +17,10 @@ import {
   Send,
   Heart,
   MapPin,
-  Calendar
+  Calendar,
+  Phone,
+  Youtube,
+  Download
 } from 'lucide-react'
 
 // ============================================
@@ -123,14 +126,14 @@ const Hero = () => {
           {/* Main Title */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up">
             <span className="text-white">Hola, soy </span>
-            <span className="text-gradient">José Alonso</span>
+            <span className="text-gradient">José Alonso García-Tapetado</span>
           </h1>
 
           {/* Subtitle */}
           <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-300 mb-6 animate-slide-up">
-            <span className="text-indigo-400">Full Stack Developer</span>
-            <span className="text-gray-500"> • </span>
-            <span className="text-purple-400">Mobile Specialist</span>
+            <span className="text-indigo-400">Desarrollador Multiplataforma</span>
+            <span className="text-gray-500"> | </span>
+            <span className="text-purple-400">React & Mobile</span>
           </h2>
 
           {/* Description */}
@@ -150,7 +153,15 @@ const Hero = () => {
               Ver Proyectos
             </a>
             <a
-              href="#contact"
+              href="/Curriculum_José_Alonso.pdf"
+              download
+              className="glass px-8 py-4 rounded-full text-white font-semibold hover:bg-white/10 transition-all hover:scale-105 flex items-center gap-2"
+            >
+              <Download size={20} />
+              Descargar CV
+            </a>
+            <a
+              href="mailto:josealonsogt@icloud.com"
               className="glass px-8 py-4 rounded-full text-white font-semibold hover:bg-white/10 transition-all hover:scale-105 flex items-center gap-2"
             >
               <Mail size={20} />
@@ -161,7 +172,7 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex items-center justify-center gap-6 animate-slide-up">
             <a
-              href="https://github.com/josealonsogarcia"
+              href="https://github.com/josealonsogt"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
@@ -169,7 +180,7 @@ const Hero = () => {
               <Github size={28} />
             </a>
             <a
-              href="https://linkedin.com/in/josealonsogarcia"
+              href="https://www.linkedin.com/in/josealonsogt/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-indigo-400 transition-colors hover:scale-110 transform"
@@ -177,7 +188,15 @@ const Hero = () => {
               <Linkedin size={28} />
             </a>
             <a
-              href="mailto:josealongar16@gmail.com"
+              href="https://www.youtube.com/@josealonsogt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-red-500 transition-colors hover:scale-110 transform"
+            >
+              <Youtube size={28} />
+            </a>
+            <a
+              href="mailto:josealonsogt@icloud.com"
               className="text-gray-400 hover:text-purple-400 transition-colors hover:scale-110 transform"
             >
               <Mail size={28} />
@@ -222,12 +241,16 @@ const About = () => {
             <div className="glass rounded-3xl p-8 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-purple-600/20"></div>
               <div className="relative z-10">
-                <div className="w-48 h-48 mx-auto rounded-full bg-gradient-primary flex items-center justify-center mb-6 animate-glow">
-                  <User size={80} className="text-white" />
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 animate-glow ring-4 ring-indigo-500/50">
+                  <img 
+                    src="/image.png" 
+                    alt="José Alonso García-Tapetado"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-white mb-2">José Alonso García-Tapetado</h3>
-                  <p className="text-indigo-400 font-mono">Full Stack Developer</p>
+                  <p className="text-indigo-400 font-mono">Desarrollador Multiplataforma | React & Mobile</p>
                 </div>
               </div>
             </div>
@@ -395,29 +418,61 @@ const Skills = () => {
 const Projects = () => {
   const projects = [
     {
-      title: 'Kebab Orders Manager',
-      description: 'Aplicación nativa multiplataforma (iOS/Android) para la gestión integral de pedidos de un kebab. Incluye sistema de inventario en tiempo real, gestión de pedidos con notificaciones push y panel de administración.',
-      tags: ['Kotlin', 'Swift', 'PHP', 'MySQL', 'Firebase'],
-      icon: '🥙',
-      gradient: 'from-orange-500 to-red-500',
-      features: ['Pedidos en tiempo real', 'Gestión de inventario', 'Notificaciones push', 'Panel admin'],
+      title: "Fashion Glasses Store",
+      description: "E-commerce de gafas con sistema de comentarios, valoraciones y vista maestro-detalle.",
+      tech: ["React", "Vite", "Context API"],
+      github: "https://github.com/josealonsogt/GafasReact",
+      demo: "https://gafasreact.vercel.app/",
+      image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: 'Vapers Shop Manager',
-      description: 'Sistema completo de gestión de stock y ventas para tienda de vapeo. Carrito de compra intuitivo, control de inventario con alertas de stock bajo y sistema de notificaciones para promociones.',
-      tags: ['Java', 'Spring Boot', 'React', 'MySQL'],
-      icon: '💨',
-      gradient: 'from-purple-500 to-pink-500',
-      features: ['Control de stock', 'Carrito de compra', 'Alertas automáticas', 'Dashboard ventas'],
+      title: "Concesionario Online",
+      description: "Buscador y filtrado de coches con interfaz moderna.",
+      tech: ["React", "Bootstrap", "Filtros"],
+      github: "https://github.com/josealonsogt/CochesReact",
+      demo: "https://cochesreact.vercel.app/",
+      image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: 'Gafas E-commerce',
-      description: 'Plataforma web moderna desarrollada en React para visualización y compra de catálogo de gafas. Diseño responsive, filtros avanzados y experiencia de usuario optimizada.',
-      tags: ['React', 'JavaScript', 'Tailwind CSS', 'Firebase'],
-      icon: '👓',
-      gradient: 'from-blue-500 to-cyan-500',
-      features: ['Catálogo interactivo', 'Filtros avanzados', 'Diseño responsive', 'Checkout integrado'],
+      title: "Kings League InfoJobs",
+      description: "Web para visualizar estadísticas, partidos y clasificaciones de la liga. Datos en tiempo real consumiendo API externa.",
+      tech: ["React", "Vite", "API Rest", "CSS3"],
+      github: "https://github.com/josealonsogt/KingsLeagueReact",
+      demo: "https://kingsleague-josealonsogt.vercel.app/",
+      image: "https://images.unsplash.com/photo-1579952363873-27f3bde9be2e?auto=format&fit=crop&q=80&w=800"
     },
+    {
+      title: "Gestión de Parques Naturales",
+      description: "Aplicación para la gestión y visualización de reservas naturales, fauna y flora.",
+      tech: ["React", "Vite", "API"],
+      github: "https://github.com/josealonsogt/ParquesReact",
+      demo: "https://parquesreact.vercel.app/",
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      title: "Metro de Madrid",
+      description: "App iOS de gestión de líneas y estaciones de metro con consumo de API.",
+      tech: ["SwiftUI", "API Rest", "iOS"],
+      github: "https://github.com/josealonsogt/MetroMadrid",
+      demo: null,
+      image: "/MetroMadridLogo.svg.png"
+    },
+    {
+      title: "App de Chistes",
+      description: "App Android maestro-detalle con consumo de API REST usando Retrofit.",
+      tech: ["Kotlin", "Jetpack Compose", "Retrofit"],
+      github: "https://github.com/josealonsogt/AppChistes",
+      demo: null,
+      image: "https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      title: "TMDB Cine",
+      description: "Buscador de películas con persistencia de datos y vistas dinámicas.",
+      tech: ["JPA", "JDBC", "JSP"],
+      github: "https://github.com/josealonsogt/TheMovieJPA",
+      demo: null,
+      image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=800"
+    }
   ]
 
   return (
@@ -441,12 +496,14 @@ const Projects = () => {
               key={index}
               className="glass rounded-3xl overflow-hidden group hover:scale-105 transition-all duration-300"
             >
-              {/* Project Header */}
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/20"></div>
-                <span className="text-8xl z-10 group-hover:scale-110 transition-transform">
-                  {project.icon}
-                </span>
+              {/* Project Image */}
+              <div className="h-48 relative overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent"></div>
               </div>
 
               {/* Project Content */}
@@ -458,34 +515,37 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Features */}
+                {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.features.map((feature, i) => (
-                    <span key={i} className="text-xs text-indigo-300 bg-indigo-500/10 px-2 py-1 rounded-full">
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, i) => (
+                  {project.tech.map((tech, i) => (
                     <span key={i} className="text-xs text-gray-400 bg-white/5 px-3 py-1 rounded-full">
-                      {tag}
+                      {tech}
                     </span>
                   ))}
                 </div>
 
                 {/* Links */}
                 <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                  <a href="#" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+                  >
                     <Github size={18} />
                     Código
                   </a>
-                  <a href="#" className="flex items-center gap-2 text-gray-400 hover:text-indigo-400 transition-colors text-sm">
-                    <ExternalLink size={18} />
-                    Demo
-                  </a>
+                  {project.demo && (
+                    <a 
+                      href={project.demo} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-400 hover:text-indigo-400 transition-colors text-sm"
+                    >
+                      <ExternalLink size={18} />
+                      Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -495,7 +555,7 @@ const Projects = () => {
         {/* More Projects Button */}
         <div className="text-center mt-12">
           <a
-            href="https://github.com/josealonsogarcia"
+            href="https://github.com/josealonsogt"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 glass px-8 py-4 rounded-full text-white font-semibold hover:bg-white/10 transition-all"
@@ -517,20 +577,32 @@ const Contact = () => {
     {
       icon: <Mail className="text-indigo-400" size={24} />,
       label: 'Email',
-      value: 'josealongar16@gmail.com',
-      href: 'mailto:josealongar16@gmail.com',
+      value: 'josealonsogt@icloud.com',
+      href: 'mailto:josealonsogt@icloud.com',
+    },
+    {
+      icon: <Phone className="text-green-400" size={24} />,
+      label: 'Teléfono',
+      value: '+34 627 18 14 92',
+      href: 'tel:+34627181492',
     },
     {
       icon: <Linkedin className="text-blue-400" size={24} />,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/josealonsogarcia',
-      href: 'https://linkedin.com/in/josealonsogarcia',
+      value: 'linkedin.com/in/josealonsogt',
+      href: 'https://www.linkedin.com/in/josealonsogt/',
     },
     {
       icon: <Github className="text-white" size={24} />,
       label: 'GitHub',
-      value: 'github.com/josealonsogarcia',
-      href: 'https://github.com/josealonsogarcia',
+      value: 'github.com/josealonsogt',
+      href: 'https://github.com/josealonsogt',
+    },
+    {
+      icon: <Youtube className="text-red-500" size={24} />,
+      label: 'YouTube',
+      value: 'youtube.com/@josealonsogt',
+      href: 'https://www.youtube.com/@josealonsogt',
     },
   ]
 
@@ -634,13 +706,13 @@ const Contact = () => {
                 ></textarea>
               </div>
               
-              <button
-                type="submit"
+              <a
+                href="mailto:josealonsogt@icloud.com?subject=Contacto%20desde%20Portfolio&body=Hola%20José,%20me%20gustaría%20contactar%20contigo."
                 className="w-full bg-gradient-primary py-4 rounded-xl text-white font-semibold hover:opacity-90 transition-all flex items-center justify-center gap-2"
               >
                 <Send size={20} />
                 Enviar Mensaje
-              </button>
+              </a>
             </form>
           </div>
         </div>
@@ -666,7 +738,7 @@ const Footer = () => {
           
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com/josealonsogarcia"
+              href="https://github.com/josealonsogt"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -674,7 +746,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/josealonsogarcia"
+              href="https://www.linkedin.com/in/josealonsogt/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-indigo-400 transition-colors"
@@ -682,7 +754,15 @@ const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:josealongar16@gmail.com"
+              href="https://www.youtube.com/@josealonsogt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-red-500 transition-colors"
+            >
+              <Youtube size={20} />
+            </a>
+            <a
+              href="mailto:josealonsogt@icloud.com"
               className="text-gray-400 hover:text-purple-400 transition-colors"
             >
               <Mail size={20} />
